@@ -24,7 +24,7 @@ function nav(activeSlug) {
   ];
   return items.map(item => {
     const active = item.slug === activeSlug ? ' class="active"' : '';
-    const href   = item.slug === 'index' ? '/index.html' : `/${item.slug}.html`;
+    const href   = item.slug === 'index' ? 'index.html' : `${item.slug}.html`;
     return `<a href="${href}"${active}>${item.label}</a>`;
   }).join('\n');
 }
@@ -53,8 +53,8 @@ function page({ slug, title, body, rawMd, prev, next }) {
 
   const pagination = (prev || next) ? `
   <div class="pagination">
-    ${prev ? `<a href="/${prev.slug}.html" class="page-link prev">← ${prev.label} — ${prev.title}</a>` : '<span></span>'}
-    ${next ? `<a href="/${next.slug}.html" class="page-link next">${next.label} — ${next.title} →</a>` : '<span></span>'}
+    ${prev ? `<a href="${prev.slug}.html" class="page-link prev">← ${prev.label} — ${prev.title}</a>` : '<span></span>'}
+    ${next ? `<a href="${next.slug}.html" class="page-link next">${next.label} — ${next.title} →</a>` : '<span></span>'}
   </div>` : '';
 
   return `<!DOCTYPE html>
@@ -63,7 +63,7 @@ function page({ slug, title, body, rawMd, prev, next }) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title} — Compound Starter</title>
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="layout">
