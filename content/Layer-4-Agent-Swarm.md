@@ -576,7 +576,9 @@ End with:
 >
 > **When tasks fail:** check `Tasks/errors/` and the log. Most failures are: task description too vague (Claude didn't know what to do), wrong Repo path, or a git conflict in the vault.
 >
-> **What's next:** You now have all four layers. The natural evolution is routing heavier tasks to additional machines — a Linux box or cloud VM — over SSH. When you're ready to expand, that's a separate session. For now, use the system, let it prove its value, and come back when you have a backlog of tasks you wish ran automatically."
+> **What's next:** You now have all four layers. Use the system for a while — let it prove its value, and come back when you have a backlog of tasks you wish ran automatically.
+>
+> One question before you go: **will this ever need a second machine?** If tasks start piling up, you need things to run while your Mac is closed, or you want a machine that's always on — that's Layer 5. It covers Tailscale (secure access between your machines) and `screen`/tmux (keeping a session alive across disconnects). Most people don't need this yet. If and when you do, paste `Layer-5-Multi-Machine.md` into a Claude Code session."
 
 ---
 
@@ -588,4 +590,4 @@ End with:
 - **Git state must be clean before the runner commits.** If vault-sync ran mid-task and left a conflict, the runner's commit will fail. The script does `git pull` at startup — this handles most cases, but a merge conflict will require manual resolution.
 - **One task at a time.** The runner processes tasks serially. If a task takes 5 minutes, the next task waits. This is fine for most research/writing tasks. Parallel execution is an advanced topic for when the workload warrants it.
 - **Task descriptions should be self-contained.** Claude Code in headless mode starts fresh with no conversation history. Include all context in the task file itself — don't assume it "knows" something from a previous session.
-- **Multi-machine is the natural next step.** When one Mac isn't enough — tasks piling up, need to run while Mac is closed, need a machine that's always on — the next step is a Linux box with an SSH runner. That's a separate build and not in scope here.
+- **Multi-machine is Layer 5, not this layer.** When one Mac isn't enough — tasks piling up, need to run while Mac is closed, need a machine that's always on — the next step is a second machine reached over Tailscale, with `screen`/tmux keeping sessions alive across disconnects. Ask the closing question, don't build it here.
