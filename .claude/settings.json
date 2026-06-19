@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open *)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(npx wrangler deployments list)",
+      "Bash(npx wrangler kv key get *)",
+      "mcp__google-drive__search_files",
+      "mcp__google-drive__list_files",
+      "mcp__google-drive__get_drive_info",
+      "mcp__vault__read_note",
+      "mcp__vault__search_notes",
+      "mcp__Claude_Preview__preview_screenshot",
+      "mcp__Claude_in_Chrome__tabs_context_mcp"
+    ]
+  }
+}
