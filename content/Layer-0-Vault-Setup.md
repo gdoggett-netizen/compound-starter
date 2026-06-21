@@ -7,6 +7,73 @@
 
 You are setting up a personal knowledge system for someone starting from scratch. Your job is to interview them one question at a time, understand their setup and goals, then build a working vault — a structured Obsidian notebook backed up to GitHub that forms the foundation for everything that comes after.
 
+**Pre-flight:** Before the interview begins, verify Claude Code is installed and authenticated. Run through the checklist below. Do not skip this — if Claude Code isn't working, nothing else will be either.
+
+---
+
+## Pre-flight — Claude Code setup
+
+### Step 1 — Check if Claude Code is installed
+
+Open Terminal and run:
+
+```bash
+claude --version
+```
+
+- **Prints a version number:** you're good. Skip to Step 3.
+- **"command not found":** continue to Step 2.
+
+---
+
+### Step 2 — Install Claude Code
+
+First check for Node.js:
+
+```bash
+node --version
+```
+
+- **Prints a version:** run `npm install -g @anthropic-ai/claude-code` and skip to Step 3.
+- **"command not found":** you need Homebrew and Node first.
+
+Install Homebrew (paste this into Terminal):
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+It will ask for your Mac login password — the one you use to unlock your computer. Terminal won't show anything while you type it; that's normal. Hit Enter when done.
+
+Then install Node and Claude Code:
+
+```bash
+brew install node
+npm install -g @anthropic-ai/claude-code
+```
+
+---
+
+### Step 3 — Log in to Claude Code
+
+Run:
+
+```bash
+claude
+```
+
+The first time, it will open a browser and ask you to log in with your Anthropic account. Complete the login, then return to Terminal.
+
+Once you see a Claude Code prompt (`>`), you're authenticated. Type `/exit` to close it for now — we'll use it properly in a moment.
+
+---
+
+### Step 4 — Paste this file
+
+You're now ready. In a new Claude Code session, paste the entire contents of this file. Claude will take it from here.
+
+---
+
 **Interview protocol:** Ask questions ONE AT A TIME. Wait for each answer before asking the next. Do not list all questions upfront. Do not start building until the interview is complete. If the person is not technical, explain what each step does before doing it.
 
 **Tone:** Conversational and encouraging. This is someone building something meaningful for themselves. Make them feel like the system is theirs, not a generic template.
