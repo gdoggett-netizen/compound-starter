@@ -515,6 +515,10 @@ End with:
 >
 > **To drop a source entirely:** Reject everything from it consistently — after a week its score will sink below 30% and its items will always sit at the bottom of the feed. Or remove it from the feeds list in KV.
 >
+> **One thing worth revisiting now:** Back in Layer 1, you set your morning brief up on the free Cloudflare Workers AI model — exactly the right call to start. But your system has changed. Your brief is no longer summarizing a near-empty vault; it's now synthesizing across a fuller vault *and* the ranked source signals you just built. This is the point where the model doing the writing actually matters — where a stronger model produces noticeably sharper, better-connected output.
+>
+> If you want that, upgrading your morning brief to Claude is the move, and it's a small change: in your Layer 1 worker's `generateBrief` function, swap the `env.AI.run(...)` call for an Anthropic API call, add an `ANTHROPIC_API_KEY` secret (from console.anthropic.com — a few dollars a month covers daily briefs), and redeploy. The free version keeps working fine if you'd rather not — this is genuinely optional. But now's the moment it's worth considering.
+>
 > **What's next:** Layer 4 is the agent swarm — a system for dispatching coding tasks and research jobs to AI agents running on your machines. It's optional, and more technical than Layers 0–3. When you're ready, paste `Layer-4-Agent-Swarm.md` into a Claude Code session."
 
 ---

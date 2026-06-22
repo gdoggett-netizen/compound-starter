@@ -75,7 +75,9 @@ Good news: no API key needed. Cloudflare includes a free AI service called Worke
 
 Tell them:
 
-> "We're going to use Cloudflare Workers AI to write your brief. It's included free with your Cloudflare account — no credit card, no API key, no cost. When you're ready to upgrade to Claude for higher quality output, that's a 5-minute swap later. For now, free is the right call."
+> "We're going to use Cloudflare Workers AI to write your brief. It's included free with your Cloudflare account — no credit card, no API key, no cost. This is a real, fully working version, not a stripped-down one.
+>
+> Down the road there's an optional upgrade: you can swap in Claude for sharper, more synthesized writing. It's a 5-minute change and it's there whenever you want it. But it only really pays off once your vault has filled up and your brief is pulling from a lot more — and you're not there yet. So free is genuinely the right call to start, and the door stays open. We'll bring this up again later at the point where it actually matters."
 
 No action needed from them — the AI binding gets wired up automatically in the next steps. Continue to Q6.
 
