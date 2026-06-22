@@ -190,7 +190,17 @@ Fill in `[Name]` and their actual interests. A generic prompt produces a generic
 
 ### Step 6 — Write the worker
 
-Create `src/index.js`. Read the code carefully — there are two placeholders to fill in before deploying: the READER title (their name) and the list of sources (from Q2). Everything else deploys as-is.
+Create `src/index.js`. Read the code carefully — there are two placeholders to fill in before deploying: the READER title (their name) and the list of sources (from Q2).
+
+**Explain the four buttons — don't assume the difference is obvious.** Tell them:
+
+> "Each item gives you four choices: **Keep** (good — I read it), **Save** (loved it — save for later), **Skip** (meh, not for me), **Reject** (never show me this source again). Keep and Save tell the system *more like this*; Skip and Reject tell it *less*. In the next layer, those choices are what make your feed smarter over time."
+
+**Then make it clear this is THEIR reader, not a fixed template — offer to build their vision.** Say something like:
+
+> "This is just my starting design. It's *your* reader, so if you want it to look or work differently, just describe it and I'll rebuild it for you. For example: 'don't like where the buttons are — move them to the left,' or 'make it cleaner, more like Twitter,' or 'bigger text and put Save first.' What's your vision?"
+
+If they describe changes, adapt the HTML/CSS to match *before* you deploy. If they're happy with the default, continue as-is. Everything else in the code deploys unchanged.
 
 ```javascript
 import { XMLParser } from 'fast-xml-parser';
@@ -222,6 +232,7 @@ const READER_HTML = `<!DOCTYPE html>
   .btn-save { background: #1e3a8a; color: #93c5fd; }
   .btn-skip { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
   .btn-reject { background: #7f1d1d; color: #fca5a5; }
+  .legend { max-width: 680px; margin: 0 auto; padding: 10px 16px 0; font-size: 12px; color: #64748b; line-height: 1.5; }
   .empty { text-align: center; color: #475569; padding: 60px 20px; font-size: 15px; }
   .loading { text-align: center; color: #475569; padding: 40px; }
 </style>
@@ -231,6 +242,7 @@ const READER_HTML = `<!DOCTYPE html>
   <h1>[Name]'s Reader</h1>
   <span class="count" id="count">loading...</span>
 </div>
+<div class="legend"><strong>Keep</strong> = good · <strong>Save</strong> = loved it (read later) · <strong>Skip</strong> = meh · <strong>Reject</strong> = never show me this source</div>
 <div class="feed" id="feed"><div class="loading">Loading...</div></div>
 <script>
 let items = [];
