@@ -159,11 +159,17 @@ Once they have an account, check for the GitHub CLI:
 
 ---
 
-### Q5 — Life areas
+### Q5 — Your world
 
-> "What are the main areas of your life you want to stay on top of? Think in broad categories — things like Work, Health, Family, Finances, Learning. List as many as feel right. Between 4 and 7 is a good range."
+> "Now the fun part — what's your world made of? What do you actually care about and want to keep track of? Don't overthink it. It can be the stuff you're into (music, sports, gaming, a side hustle, your friends) *and* the stuff you're juggling (school, work, money) — whatever's actually *yours*. Name as many as feel right; 4 to 7 is a good range."
 
-These become the top-level folders in their vault and will be used in later layers to organize everything they read and learn. Don't let them overthink it — any answer works and can be adjusted later.
+These become the top-level folders in their vault and organize everything in later layers.
+
+**Match their energy — this is the big one for younger or more casual people.** Don't lead with a formal list of "responsibilities." Lead with what they're *into*, and let the practical stuff come along naturally. The goal is for them to feel like this system is being built around *their* life and interests, not handed a productivity chore. Tailor your examples to them:
+- A student or creative might land on: "Music, Soccer, School, Film projects, Money, Friends."
+- A professional might land on: "Work, Health, Family, Finances, Learning."
+
+Both are perfect. Any answer works and can be changed anytime — reassure them there's no wrong list.
 
 ---
 
