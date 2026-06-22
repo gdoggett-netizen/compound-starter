@@ -30,6 +30,8 @@ Open with:
 
 > "What sources do you want to follow? Think about newsletters, blogs, industry sites, YouTube channels — anything you currently check manually that you'd rather have delivered to you. List as many as you'd like, and include the URL for each."
 
+**Explain RSS with an analogy:** "RSS is like a magazine subscription, but for websites. Instead of you visiting ten different sites to check for new stuff, each one mails its new articles to a single mailbox automatically. We're setting up that mailbox."
+
 For each source they name, you need the RSS feed URL. Common patterns:
 - Most blogs/news sites: `https://[site]/feed` or `https://[site]/rss` or `https://[site]/feed.xml`
 - Substack newsletters: `https://[newsletter].substack.com/feed`
@@ -101,6 +103,8 @@ npm install fast-xml-parser
 
 ### Step 2 — Create the D1 database
 
+**Explain it with an analogy:** "A database (D1) is just a smart spreadsheet that lives in the cloud. It's where we'll keep every article we pull in — one row per item — so we can sort, filter, and remember them. Same idea as a spreadsheet, but built to handle thousands of rows without breaking a sweat."
+
 ```bash
 wrangler d1 create [worker-name]-rss
 ```
@@ -133,6 +137,8 @@ CREATE TABLE IF NOT EXISTS decisions (
 ---
 
 ### Step 3 — Create the KV namespace
+
+**Explain it with an analogy:** "KV is like a row of labeled sticky notes — a quick place to jot down small facts the system needs to remember, like 'when did I last check the feeds?' The spreadsheet (D1) is for lots of rows; sticky notes (KV) are for quick one-off facts. Right tool for each job."
 
 ```bash
 wrangler kv namespace create RSS_KV

@@ -80,6 +80,8 @@ Read the existing `src/index.js` before making any changes. Identify: where `han
 
 ### Step 1 — Add the scoring module
 
+**Explain the whole idea with an analogy:** "Right now your feed is like a radio station that plays songs in a random order. We're about to give it a memory of your thumbs-up and thumbs-down — every time you keep or skip something, it learns, and slowly the stuff you actually like floats to the top. Like a playlist that gets better the more you use it."
+
 Create a new file `src/scoring.js`. This is the only new file — everything else is additions to the existing worker.
 
 ```javascript

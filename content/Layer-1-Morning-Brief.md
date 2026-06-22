@@ -121,6 +121,8 @@ Work through each step in order. Show the person what you're doing. Debug before
 
 ### Step 1 — Create the worker project
 
+**Explain what a Worker is, with an analogy:** "A Cloudflare Worker is like a tiny robot that lives in the cloud, not on your computer. You give it a job and a schedule, and it wakes up on its own — even when your laptop is closed — does the job, then goes back to sleep. Yours will wake up every morning, read your vault, and write your brief."
+
 ```bash
 mkdir ~/[worker-name]-morning-brief
 cd ~/[worker-name]-morning-brief

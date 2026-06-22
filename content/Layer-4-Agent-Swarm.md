@@ -88,6 +88,8 @@ Wait for a yes.
 
 ### Step 1 — Create the task queue structure
 
+**Explain the big idea with an analogy:** "Think of this like a to-do basket on your desk that a tireless assistant checks every few minutes. You drop a task in the basket — even from your phone — and the assistant (an AI agent on your Mac) picks it up, does the work, and leaves the finished result in your vault. You don't have to be sitting there. That's the 'swarm.'"
+
 ```bash
 cd ~/[VaultName]
 mkdir -p "Tasks/inbox" "Tasks/done" "Tasks/errors" "Tasks/templates"
