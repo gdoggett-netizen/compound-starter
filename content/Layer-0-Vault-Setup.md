@@ -68,7 +68,28 @@ Once you see a Claude Code prompt (`>`), you're authenticated. Type `/exit` to c
 
 ---
 
-### Step 4 — Paste this file
+### Step 4 — Two tricks that make this 10x faster
+
+You'll move through this whole tutorial faster if you know these two things up front. They're the difference between fighting the tools and flying through them.
+
+**1. Copy and paste are your best friends.** Almost everything in this tutorial — commands, file contents, this whole document — is meant to be copied and pasted, not typed by hand. On a Mac:
+- **Copy:** `Cmd+C`
+- **Paste:** `Cmd+V`
+- In Terminal specifically, paste also works with `Cmd+V` (you don't need the older `Cmd+Shift+V`).
+
+Don't retype commands — you'll make typos and waste time. Highlight, copy, paste, Enter.
+
+**2. Screenshots are a superpower with Claude.** This is the big one. Any time you're stuck on a screen — a confusing settings page, a button you can't find, an error you don't understand, a website that doesn't look like what the tutorial described — you don't have to describe it in words. **Take a screenshot and paste it straight into Claude Code.** Claude can see the image and tell you exactly what to click.
+
+- **Screenshot a region:** `Cmd+Shift+4`, then drag a box around what you want. It saves to your Desktop.
+- **Screenshot the whole screen:** `Cmd+Shift+3`.
+- **Paste it into Claude:** drag the image file into the Claude Code terminal, or copy the image (`Cmd+Shift+4` then hold `Control` while dragging copies it to clipboard) and paste with `Cmd+V`.
+
+When in doubt, screenshot it and ask "what do I do here?" — it's almost always faster than typing out a description. Get in the habit of this now; you'll use it constantly.
+
+---
+
+### Step 5 — Paste this file
 
 You're now ready. In a new Claude Code session, paste the entire contents of this file. Claude will take it from here.
 

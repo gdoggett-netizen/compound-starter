@@ -69,12 +69,15 @@ Once they confirm the account, check for the CLI:
 
 ---
 
-### Q5 — Anthropic API key
+### Q5 — AI model
 
-> "Do you have an Anthropic API key? This is what the brief uses to write. You can get one at console.anthropic.com — a few dollars a month covers daily briefs easily."
+Good news: no API key needed. Cloudflare includes a free AI service called Workers AI — it runs inside your Cloudflare account at no cost, with generous daily limits that easily cover a morning brief.
 
-- **Yes:** continue (you'll add it as a Worker secret shortly)
-- **No:** "Go to console.anthropic.com, create an account, then go to API Keys and create a new key. Copy it somewhere safe — you can only see it once. Come back when you have it."
+Tell them:
+
+> "We're going to use Cloudflare Workers AI to write your brief. It's included free with your Cloudflare account — no credit card, no API key, no cost. When you're ready to upgrade to Claude for higher quality output, that's a 5-minute swap later. For now, free is the right call."
+
+No action needed from them — the AI binding gets wired up automatically in the next steps. Continue to Q6.
 
 ---
 
@@ -102,7 +105,7 @@ Before writing any code, summarize:
 > - Writes a [format they described] brief to your vault as `Daily Notes/YYYY-MM-DD.md`
 > - Auto-syncs to your vault via GitHub within 15 minutes
 >
-> Total cost estimate: ~$2–5/month (Anthropic API, free on Cloudflare)
+> Total cost estimate: **free** — Cloudflare Workers AI is included with your account, GitHub is free, Cloudflare Workers is free within daily limits
 >
 > Does that look right?"
 
@@ -136,6 +139,9 @@ compatibility_date = "2024-01-01"
 
 [triggers]
 crons = ["[HH MM] * * *"]
+
+[ai]
+binding = "AI"
 ```
 
 Replace `[HH MM]` with the UTC time you calculated from Q3. Example: `"10 0 * * *"` = 10:00 UTC daily.
@@ -199,26 +205,13 @@ async function fetchGitHubFile(path, env) {
 }
 
 async function generateBrief(context, today, env) {
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: {
-      'x-api-key': env.ANTHROPIC_API_KEY,
-      'anthropic-version': '2023-06-01',
-      'content-type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 800,  // adjust based on their Q6 answer
-      system: env.BRIEF_SYSTEM_PROMPT,
-      messages: [{
-        role: 'user',
-        content: `Today is ${today}. Here is the current vault context:\n\n${context}\n\nWrite the morning brief.`
-      }]
-    })
+  const response = await env.AI.run('@cf/meta/llama-3.3-70b-instruct-fp8-fast', {
+    messages: [
+      { role: 'system', content: env.BRIEF_SYSTEM_PROMPT },
+      { role: 'user', content: `Today is ${today}. Here is the current vault context:\n\n${context}\n\nWrite the morning brief.` }
+    ]
   });
-  if (!res.ok) throw new Error(`Anthropic API error: ${res.status}`);
-  const data = await res.json();
-  return data.content[0].text;
+  return response.response;
 }
 
 async function writeToVault(brief, today, env) {
@@ -305,9 +298,6 @@ cd ~/[worker-name]-morning-brief
 # Their GitHub token
 wrangler secret put GITHUB_TOKEN
 
-# Their Anthropic API key
-wrangler secret put ANTHROPIC_API_KEY
-
 # Their vault repo (format: username/repo-name — e.g. "bendolinky/ben-brains")
 wrangler secret put GITHUB_REPO
 
@@ -316,6 +306,8 @@ wrangler secret put BRIEF_SYSTEM_PROMPT
 ```
 
 For `BRIEF_SYSTEM_PROMPT`, paste the contents of `system-prompt.txt` when prompted.
+
+Note: no API key needed — the `AI` binding in `wrangler.toml` connects automatically to Cloudflare Workers AI at no cost.
 
 Deploy:
 
@@ -393,6 +385,8 @@ End with:
 >
 > **To change the tone or format:** Run `wrangler secret put BRIEF_SYSTEM_PROMPT` in the project folder and paste a new prompt.
 >
+> **Cost:** This runs completely free on Cloudflare Workers AI. If you ever want higher-quality writing, you can upgrade to Claude later — it's a small code change in `generateBrief` (swap the `env.AI.run(...)` call for an Anthropic API call) plus adding an `ANTHROPIC_API_KEY` secret. Not needed now; the free model handles a daily brief well.
+>
 > **What's next:** Layer 2 builds the RSS flywheel — a pipeline that monitors content sources (newsletters, YouTube channels, blogs) and tells you what's worth reading. It feeds signals back into the brief so it gets smarter over time. When you're ready, paste `Layer-2-RSS-Flywheel.md` into a Claude Code session."
 
 ---
@@ -401,7 +395,7 @@ End with:
 
 - **Fill every placeholder** — `[worker-name]`, `[Name]`, `[GITHUB_REPO]`. Generic placeholders in the deployed worker or system prompt are a failure mode.
 - **The system prompt is the product.** A good brief comes from a prompt that actually knows who this person is. Spend time on it.
-- **Haiku is the right model here.** claude-haiku-4-5-20251001 is fast and cheap for daily briefs. Upgrade to Sonnet only if they complain the quality is lacking — it costs 5x more.
+- **Workers AI is free.** The `@cf/meta/llama-3.3-70b-instruct-fp8-fast` model runs inside Cloudflare at no cost within generous daily limits. If quality ever feels lacking, the upgrade path is swapping to Claude via Anthropic API — a 5-minute code change documented in the hand-off above.
 - **Secrets are not in the repo.** Never commit `system-prompt.txt` or any file containing keys. The `.gitignore` from Layer 0 covers `.env` but add `system-prompt.txt` if they ask why it's not committed.
 - **GitHub token scope:** `repo` scope is enough. Don't request broader permissions.
 - **If the GitHub write fails with 422:** the SHA lookup is off — the file exists but the SHA doesn't match. Pull the current SHA fresh and retry.
