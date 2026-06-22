@@ -8,6 +8,7 @@ const DIST    = path.join(__dirname, 'dist');
 const LAYERS = [
   { file: 'Layer-0-Vault-Setup.md',        slug: 'layer-0', label: 'Layer 0', title: 'Vault Setup' },
   { file: 'Layer-1-Morning-Brief.md',       slug: 'layer-1', label: 'Layer 1', title: 'Morning Brief' },
+  { file: 'Layer-1.5-Make-It-Yours.md',     slug: 'layer-1-5', label: 'Layer 1.5', title: 'Make It Yours' },
   { file: 'Layer-2-RSS-Flywheel.md',        slug: 'layer-2', label: 'Layer 2', title: 'RSS Flywheel' },
   { file: 'Layer-3-Content-Intelligence.md',slug: 'layer-3', label: 'Layer 3', title: 'Content Intelligence' },
   { file: 'Layer-4-Agent-Swarm.md',         slug: 'layer-4', label: 'Layer 4', title: 'Agent Swarm' },

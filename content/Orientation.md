@@ -38,6 +38,7 @@ You'll build the first version of this in Layer 0 without much fuss. The point o
 |---|---|---|
 | **0 — Vault** | Your notes system, backed up automatically | Home turf. Everything lives here and never gets lost. |
 | **1 — Morning Brief** | A daily AI-written summary | A game plan waiting for you every morning before you start. |
+| **1.5 — Make It Yours** | Your governing layer (your `Canon`) | Where you write the rules the whole system follows — see above. |
 | **2 — RSS Flywheel** | A feed of sources you care about | Pulls in what's worth your time so you're not scrolling for it. |
 | **3 — Content Intelligence** | A feedback loop | It learns what you actually pay attention to and ranks accordingly. |
 | **4 — Agent Swarm** | A task runner (optional, advanced) | Toss it a task from your phone; an AI does the work on your Mac. |

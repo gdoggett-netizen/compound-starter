@@ -1,6 +1,6 @@
 # Second Brain Curriculum
 
-A four-layer system for building a personal AI infrastructure — from scratch, one working piece at a time.
+A layered system for building a personal AI infrastructure — from scratch, one working piece at a time.
 
 Each layer ships something functional. You're not working toward a system — you have one at the end of every layer. Add layers when you're ready; stop whenever the system is useful enough.
 
@@ -12,6 +12,7 @@ Each layer ships something functional. You're not working toward a system — yo
 |---|---|---|
 | **0 — Vault** | A structured Obsidian notebook backed up to GitHub | A private note system that auto-syncs to the cloud every 15 minutes |
 | **1 — Morning Brief** | A scheduled AI-written summary of your priorities | A daily brief in your vault every morning before you start work |
+| **1.5 — Make It Yours** | Your governing layer: `Canon.md`, `CLAUDE.md`, `focus.md` | A system that follows *your* permanent rules automatically |
 | **2 — RSS Flywheel** | A content pipeline that monitors sources you care about | A triage reader + nightly AI synthesis of what you kept |
 | **3 — Content Intelligence** | A feedback loop that learns from your triage decisions | A ranked feed that gets smarter over time as you use it |
 | **4 — Agent Swarm** | A task runner that dispatches work to an AI agent | A way to queue tasks from anywhere and find results in your vault |
@@ -61,6 +62,7 @@ No paid API key is required. The AI work runs free on Cloudflare Workers AI. An 
 |---|---|
 | 0 — Vault | Free |
 | 1 — Morning Brief | Free (Cloudflare Workers AI) |
+| 1.5 — Make It Yours | Free |
 | 2 — RSS Flywheel | Free (Cloudflare Workers AI) |
 | 3 — Content Intelligence | No additional cost |
 | 4 — Agent Swarm | Depends on task volume and complexity |
@@ -75,6 +77,7 @@ Cloudflare Workers, Pages, and Workers AI are free up to generous limits — for
 |---|---|---|
 | 0 — Vault | 30–60 min | ~0 (auto-syncs) |
 | 1 — Morning Brief | 20–40 min | 2 min/day to read it |
+| 1.5 — Make It Yours | ~15 min | ~0 (edit Canon as rules emerge) |
 | 2 — RSS Flywheel | 45–60 min | 5–10 min/day to triage |
 | 3 — Content Intelligence | 20–30 min | ~0 (passive) |
 | 4 — Agent Swarm | 45–90 min | Varies by task volume |
@@ -100,6 +103,7 @@ Curriculum/
   README.md               — this file
   Layer-0-Vault-Setup.md  — Builder Agent Prompt: vault
   Layer-1-Morning-Brief.md — Builder Agent Prompt: morning brief
+  Layer-1.5-Make-It-Yours.md — Builder Agent Prompt: governing layer (Canon)
   Layer-2-RSS-Flywheel.md — Builder Agent Prompt: RSS pipeline + reader
   Layer-3-Content-Intelligence.md — Builder Agent Prompt: source scoring
   Layer-4-Agent-Swarm.md  — Builder Agent Prompt: task runner (optional)

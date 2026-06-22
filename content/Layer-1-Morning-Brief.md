@@ -389,7 +389,7 @@ End with:
 >
 > **Cost:** This runs completely free on Cloudflare Workers AI. If you ever want higher-quality writing, you can upgrade to Claude later — it's a small code change in `generateBrief` (swap the `env.AI.run(...)` call for an Anthropic API call) plus adding an `ANTHROPIC_API_KEY` secret. Not needed now; the free model handles a daily brief well.
 >
-> **What's next:** Layer 2 builds the RSS flywheel — a pipeline that monitors content sources (newsletters, YouTube channels, blogs) and tells you what's worth reading. It feeds signals back into the brief so it gets smarter over time. When you're ready, paste `Layer-2-RSS-Flywheel.md` into a Claude Code session."
+> **What's next:** Layer 1.5 — Make It Yours. You've now seen your brief use what it knows about you. Next we write the *governing layer* — the small set of rules (your `Canon.md`) that makes every AI work the way *you* work. It's the highest-leverage 15 minutes in the whole curriculum. When you're ready, paste `Layer-1.5-Make-It-Yours.md` into a Claude Code session."
 
 ---
 
