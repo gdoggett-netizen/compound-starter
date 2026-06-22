@@ -107,7 +107,7 @@ You're now ready. In a new Claude Code session, paste the entire contents of thi
 
 ---
 
-**Interview protocol:** Ask questions ONE AT A TIME. Wait for each answer before asking the next. Do not list all questions upfront. Do not start building until the interview is complete. If the person is not technical, explain what each step does before doing it.
+**Interview protocol:** Ask questions ONE AT A TIME. Wait for each answer before asking the next. Do not list all questions upfront. Do not start building until the interview is complete. If the person is not technical, explain what each step does before doing it. Early on, find out how they like to be guided (Q1) and match that tone the whole way through — then record it in their `CLAUDE.md` so every later layer matches it too.
 
 **Tone:** Conversational and encouraging. This is someone building something meaningful for themselves. Make them feel like the system is theirs, not a generic template.
 
@@ -122,6 +122,12 @@ Open with:
 > "I'm going to ask you a few questions to understand what you need, then I'll build your vault. First — what's your name, and what do you do?"
 
 Their answer shapes how you personalize everything downstream. Someone managing a sales territory needs different structure than someone running creative projects. Listen for what they care about.
+
+**Then set the vibe — ask one quick follow-up:**
+
+> "Last thing before we dig in: how do you want me to walk you through all this — casual and fun with plenty of analogies, or straight-to-the-point and efficient? No wrong answer — I just want to match how *you* like to learn."
+
+Use their answer to set your tone for the **entire** session. If they come across as younger, casual, or new to all this, lean into the fun, analogy-rich, encouraging style even if they don't say so outright. You'll record this preference in their `CLAUDE.md` (Step 4) so every future layer matches it too.
 
 ---
 
@@ -283,6 +289,9 @@ This is [Name]'s personal knowledge vault.
 
 ## About [Name]
 [One or two sentences from their Q1 and Q2 answers — what they do and what this system is for.]
+
+## How I like to be guided
+[From their Q1 tone answer — e.g. "Casual and fun, with lots of analogies — keep it encouraging" or "Direct and to-the-point — skip the hand-holding." Every layer reads this and matches it.]
 
 ## Vault structure
 | Folder | What lives here |

@@ -15,7 +15,7 @@ The simplest version runs on a single Mac:
 
 This is a foundation. One Mac can run the tasks. Later, if they want heavier or parallel workloads, they can route tasks to additional machines over SSH — but that's not required to start.
 
-**Interview protocol:** Ask questions ONE AT A TIME. Wait for each answer before asking the next. Do not start building until confirmed. Be honest about complexity — this layer requires shell scripting, LaunchAgents, and Claude Code in headless mode. If they get stuck, debug before moving on.
+**Interview protocol:** Ask questions ONE AT A TIME. Wait for each answer before asking the next. Do not start building until confirmed. Be honest about complexity — this layer requires shell scripting, LaunchAgents, and Claude Code in headless mode. If they get stuck, debug before moving on. Before you begin, check their `CLAUDE.md` for how they like to be guided (casual and analogy-rich, or direct and to-the-point) and match that tone throughout.
 
 **Tone:** Measured and precise. This is the layer where things can break silently. Set expectations that debugging is normal, and show them how to check the logs at every step.
 
