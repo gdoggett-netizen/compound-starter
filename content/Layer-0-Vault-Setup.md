@@ -80,9 +80,9 @@ Once you see a Claude Code prompt (`>`), you're authenticated. Type `/exit` to c
 
 ---
 
-### Step 4 — Two tricks that make this 10x faster
+### Step 4 — Three tricks that make this 10x faster
 
-You'll move through this whole tutorial faster if you know these two things up front. They're the difference between fighting the tools and flying through them.
+You'll move through this whole tutorial faster if you know these three things up front. They're the difference between fighting the tools and flying through them.
 
 **1. Copy and paste are your best friends.** Almost everything in this tutorial — commands, file contents, this whole document — is meant to be copied and pasted, not typed by hand. On a Mac:
 - **Copy:** `Cmd+C`
@@ -98,6 +98,8 @@ Don't retype commands — you'll make typos and waste time. Highlight, copy, pas
 - **Paste it into Claude:** drag the image file into the Claude Code terminal, or copy the image (`Cmd+Shift+4` then hold `Control` while dragging copies it to clipboard) and paste with `Cmd+V`.
 
 When in doubt, screenshot it and ask "what do I do here?" — it's almost always faster than typing out a description. Get in the habit of this now; you'll use it constantly.
+
+**3. Claude's memory is short-term — start fresh sessions.** Claude has a "context window" — its short-term memory for one conversation. When a session gets long, that memory fills up and Claude *compacts* it: it summarizes the older stuff to keep going, which can blur the early details. So start a new session for each layer or new task — a fresh one has full, sharp memory. Don't worry about losing anything: your **vault** is the permanent memory, the session is just the workspace. (To start fresh: `Cmd+T` for a new tab, or type `/exit` and run `claude` again.)
 
 ---
 

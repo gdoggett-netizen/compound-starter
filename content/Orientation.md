@@ -61,6 +61,17 @@ Every layer is a **Builder Agent Prompt** — a page you copy and paste into a C
 
 ---
 
+## One more thing: AI has short-term memory
+
+Worth knowing up front, because you'll run into it. When you work with Claude in a session, it has a **context window** — basically its short-term memory for that conversation. Powerful, but limited. When a session runs long and that memory fills up, Claude **compacts** it: it summarizes the earlier part to make room and keeps going. Handy, but fine detail from early on can get fuzzy — like talking so long you forget how the conversation started.
+
+Two takeaways:
+
+- **Start a fresh session for each new task or layer.** Don't run everything in one endless conversation — a clean session has full, sharp memory.
+- **This is exactly why the vault exists.** Your vault is your *long-term* memory — permanent, never forgotten. The session is short-term; the vault is what lasts. The whole system is built so the stuff that matters lives somewhere that doesn't disappear when the window fills up.
+
+---
+
 ## Ready
 
 That's the map. When you've got it, head to **Layer 0 — Vault Setup** and start building. If anything stops making sense along the way, screenshot it and ask Claude — or ask whoever sent you here.
