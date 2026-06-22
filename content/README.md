@@ -45,8 +45,9 @@ The interview is real — Claude uses your answers to personalize what it builds
 **For Layers 1–3:**
 - Layer 0 complete
 - A [Cloudflare](https://cloudflare.com) account (free tier)
-- An [Anthropic API](https://console.anthropic.com) key (~$2–5/month for daily use)
 - Node.js (installed via Homebrew if not already present)
+
+No paid API key is required. The AI work runs free on Cloudflare Workers AI. An optional Claude upgrade is available later if you want sharper output — the curriculum points it out at the moment it actually matters.
 
 **For Layer 4:**
 - Layers 0–3 complete
@@ -59,12 +60,12 @@ The interview is real — Claude uses your answers to personalize what it builds
 | Layer | Monthly cost |
 |---|---|
 | 0 — Vault | Free |
-| 1 — Morning Brief | ~$1–3/month (Anthropic API, ~1 call/day) |
-| 2 — RSS Flywheel | ~$1–2/month (Anthropic API, ~1 call/day for nightly brief) |
+| 1 — Morning Brief | Free (Cloudflare Workers AI) |
+| 2 — RSS Flywheel | Free (Cloudflare Workers AI) |
 | 3 — Content Intelligence | No additional cost |
 | 4 — Agent Swarm | Depends on task volume and complexity |
 
-Cloudflare Workers and Pages are free up to generous limits — for personal use, you won't hit them.
+Cloudflare Workers, Pages, and Workers AI are free up to generous limits — for personal use, you won't hit them. If you later choose to upgrade the morning brief to Claude for higher-quality writing (optional, surfaced in Layer 3), that adds roughly $1–3/month in Anthropic API usage.
 
 ---
 
@@ -108,10 +109,12 @@ Curriculum/
 
 ## Start here
 
-Open Terminal and run:
+**First, read [Start Here — Why This Works](orientation.html).** It's a five-minute orientation that explains what you're building and why, so the steps actually make sense instead of feeling like stabbing in the dark. Don't skip it.
+
+Then open your terminal and run:
 
 ```bash
 claude
 ```
 
-Then paste the contents of `Layer-0-Vault-Setup.md`.
+and paste the contents of `Layer-0-Vault-Setup.md`.

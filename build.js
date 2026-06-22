@@ -20,6 +20,7 @@ if (!fs.existsSync(DIST)) fs.mkdirSync(DIST);
 function nav(activeSlug) {
   const items = [
     { slug: 'index', label: 'Overview' },
+    { slug: 'orientation', label: 'Start Here — Why This Works' },
     ...LAYERS.map(l => ({ slug: l.slug, label: `${l.label} — ${l.title}` }))
   ];
   return items.map(item => {
@@ -93,6 +94,19 @@ if (fs.existsSync(readmeSrc)) {
     slug: 'index', title: 'Overview', body, rawMd: null
   }));
   console.log('Built: index.html');
+}
+
+// ── Build orientation (read-first concept page, no copy-prompt) ───────────────
+
+const orientSrc = path.join(CONTENT, 'Orientation.md');
+if (fs.existsSync(orientSrc)) {
+  const md   = fs.readFileSync(orientSrc, 'utf8');
+  const body = marked(md);
+  fs.writeFileSync(path.join(DIST, 'orientation.html'), page({
+    slug: 'orientation', title: 'Start Here — Why This Works', body, rawMd: null,
+    next: LAYERS[0]
+  }));
+  console.log('Built: orientation.html');
 }
 
 // ── Build each layer ─────────────────────────────────────────────────────────

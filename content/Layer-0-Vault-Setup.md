@@ -13,9 +13,21 @@ You are setting up a personal knowledge system for someone starting from scratch
 
 ## Pre-flight — Claude Code setup
 
+### Step 0 — Pick a terminal (do this first)
+
+A "terminal" is just the app where you type commands. Your Mac comes with one called **Terminal** (in Applications → Utilities) and it works perfectly fine. But if you want a friendlier, more modern experience — especially if this is new to you — install one of these instead:
+
+- **[Warp](https://warp.dev)** *(recommended for newcomers)* — clean, modern, and has AI help built right in. The easiest place to start.
+- **[iTerm2](https://iterm2.com)** — a longtime favorite, very capable.
+- **Terminal** (already on your Mac) — no install needed; totally fine if you'd rather not add anything.
+
+Pick one and open it. Everywhere this curriculum says "open Terminal" or "run this in Terminal," it means whichever one you chose — they all work the same way.
+
+---
+
 ### Step 1 — Check if Claude Code is installed
 
-Open Terminal and run:
+Open your terminal and run:
 
 ```bash
 claude --version
