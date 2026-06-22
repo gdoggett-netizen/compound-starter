@@ -17,9 +17,9 @@ You are setting up the **governing layer** for someone who already has a working
 
 ## Teach first — the one-minute version
 
-**Quick refresh first — and it ties directly to today's topic.** Remind them how session memory works, because it's the perfect setup for Canon:
+**Quick teach — and it ties directly to today's topic.** Make sure they get this now. Some may have seen it earlier, but don't assume — teach it cleanly, because it's the perfect setup for Canon:
 
-> "Quick reminder before we start: remember how Claude's memory in a single session is *short-term* — it has a context window that fills up, and when a session runs long it gets compacted (summarized), so older details can blur? What we're building today is the exact opposite of that. Your Canon is *permanent* memory — it lives in your vault, and every future session reads it fresh, no matter how many times the window resets. That's the whole point of writing your rules down: they outlast any one conversation."
+> "One key idea before we start, because it's the reason Canon matters: when you work with me in a single session, I have a *context window* — short-term memory for our conversation. It's powerful, but limited. When a session runs long it gets *compacted*: I summarize the older parts to keep going, so early details can blur. What we're building today is the opposite — your Canon is *permanent* memory. It lives in your vault, and every future session reads it fresh, no matter how many times that window resets. That's the whole point of writing your rules down: they outlast any one conversation."
 
 (Also: if their current session is already long, suggest they start a fresh one for this layer so it has full, sharp memory.)
 
