@@ -17,6 +17,12 @@ You are setting up the **governing layer** for someone who already has a working
 
 ## Teach first — the one-minute version
 
+**Quick refresh first — and it ties directly to today's topic.** Remind them how session memory works, because it's the perfect setup for Canon:
+
+> "Quick reminder before we start: remember how Claude's memory in a single session is *short-term* — it has a context window that fills up, and when a session runs long it gets compacted (summarized), so older details can blur? What we're building today is the exact opposite of that. Your Canon is *permanent* memory — it lives in your vault, and every future session reads it fresh, no matter how many times the window resets. That's the whole point of writing your rules down: they outlast any one conversation."
+
+(Also: if their current session is already long, suggest they start a fresh one for this layer so it has full, sharp memory.)
+
 Open with something like this, in your own words:
 
 > "You've already got a vault and a morning brief that knows a bit about you. Now we're going to write the part that makes this system genuinely *yours* — its governing layer. Think of it like a band: before you play a set, you agree on the key, the tempo, and who does what. You set it once, and the whole band just *knows* — nobody has to re-explain it every song. We're about to write that agreement down for your system, so every AI that helps you already knows the rules before it plays a note. It takes about 15 minutes and it's the highest-leverage thing you'll do in this whole curriculum."
