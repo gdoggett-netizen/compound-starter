@@ -146,8 +146,10 @@ This tells you whether the vault is primarily a work tool, a personal tool, or b
 
 > "Do you have a GitHub account?"
 
+**Explain it first — don't assume they know what GitHub is.** Use an analogy: "GitHub is like a cloud backup with a built-in time machine. Every time your notes save, it keeps a copy online *and* remembers every past version — so you can never really lose your work, and you can always rewind. It's also how the AI tools you add in later layers will read your vault. Think of it as the safety net under everything we build."
+
 - **Yes:** continue to the gh CLI check below
-- **No:** "You'll need a free account at github.com — it's free and takes about two minutes to create. GitHub is how your notes stay backed up and how AI tools you add later will read your vault. Come back once you've signed up."
+- **No:** "You'll need a free account at github.com — it's free and takes about two minutes to create. Come back once you've signed up."
 
 Once they have an account, check for the GitHub CLI:
 
@@ -309,6 +311,8 @@ git push
 
 ### Step 6 — Initialize git and create GitHub repo
 
+**Explain `commit` with an analogy as you do it:** "A `commit` is like a save point in a video game — a snapshot of your work at this exact moment. You can always jump back to any save point. We're making your first one right now."
+
 ```bash
 cd ~/[VaultName]
 git init
@@ -331,6 +335,8 @@ Confirm the push succeeded — open the GitHub URL it prints and show them their
 ### Step 7 — Create the sync script `[Mac only]`
 
 This script runs every 15 minutes and backs up any new notes to GitHub automatically.
+
+**Explain it with an analogy:** "We're about to set up an automatic assistant — like a recurring alarm that goes off every 15 minutes, except instead of waking you up, it quietly backs up your notes to the cloud. You'll never have to remember to save. It just happens in the background, forever."
 
 ```bash
 mkdir -p ~/bin
