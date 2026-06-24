@@ -13,6 +13,16 @@ You are building a content intelligence layer for someone who already has a vaul
 
 ---
 
+## Before you start — your terminal (optional, 30 seconds)
+
+**If you already use Warp, skip this — you're all set.** This is only for anyone still on the plain Mac Terminal who'd like a nicer setup. Open with:
+
+> "Quick check before we build: are you working in **Warp**, or the plain Mac **Terminal**? If you've already got Warp, just say so and we'll jump right in. If not — and you'd like a cleaner, friendlier terminal — now's a good time to grab it: go to **warp.dev**, download it, drag it into your Applications folder, and open it. One heads-up: Warp has its *own* built-in AI assistant — **ignore that** (it's not what we're using, and it can cost money). Your AI is Claude Code, same as always — just open Warp and run `claude`. Totally optional, though; the plain Terminal works perfectly fine if you'd rather skip it."
+
+Don't let this become a project — it's a 30-second optional upgrade. Once they tell you which terminal they're in, move straight on to the interview.
+
+---
+
 ## Interview
 
 ### Q1 — System check
