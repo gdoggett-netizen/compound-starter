@@ -40,7 +40,7 @@ function page({ slug, title, body, rawMd, prev, next }) {
     </div>
     <button class="copy-btn" onclick="copyPrompt()">Copy prompt</button>
   </div>
-  <script id="raw" type="application/json">${JSON.stringify(rawMd)}</script>
+  <script id="raw" type="application/json">${JSON.stringify(rawMd).replace(/</g, '\\u003c')}</script>
   <script>
     function copyPrompt() {
       const raw = JSON.parse(document.getElementById('raw').textContent);
