@@ -75,6 +75,8 @@ Before writing any code, summarize:
 > Sources:
 > [list each feed name and URL]
 >
+> This runs **free** — same Cloudflare Workers AI as your morning brief, no API key and no cost.
+>
 > Does that look right before I build?"
 
 Wait for a yes.
@@ -168,7 +170,12 @@ database_id = "FILL_IN_FROM_STEP_2"
 [[kv_namespaces]]
 binding = "RSS_KV"
 id = "FILL_IN_FROM_STEP_3"
+
+[ai]
+binding = "AI"
 ```
+
+The `[ai]` binding connects the worker to **Cloudflare Workers AI** — the same free AI your morning brief uses. No API key, no cost.
 
 Replace `[HH MM]` with the UTC time for the nightly brief. Example: `"0 2 * * *"` = 2:00 UTC = 10pm ET.
 
@@ -391,20 +398,13 @@ async function generateNightlyBrief(env) {
 
   const itemList = kept.map(i => `- [${i.source}] ${i.title}\n  ${i.url}`).join('\n');
 
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST',
-    headers: { 'x-api-key': env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
-    body: JSON.stringify({
-      model: 'claude-haiku-4-5-20251001',
-      max_tokens: 600,
-      system: env.BRIEF_SYSTEM_PROMPT,
-      messages: [{ role: 'user', content: `Today is ${today}. Here is the content I kept:\n\n${itemList}\n\nWrite the nightly brief.` }]
-    })
+  const aiResp = await env.AI.run('@cf/meta/llama-3.3-70b-instruct-fp8-fast', {
+    messages: [
+      { role: 'system', content: env.BRIEF_SYSTEM_PROMPT },
+      { role: 'user', content: `Today is ${today}. Here is the content I kept:\n\n${itemList}\n\nWrite the nightly brief.` }
+    ]
   });
-
-  if (!res.ok) { console.error('Anthropic error:', res.status, await res.text()); return; }
-  const data = await res.json();
-  const brief = data.content[0].text;
+  const brief = aiResp.response;
 
   const content = `# Content Brief — ${today}\n\n${brief}\n\n---\n\n## Kept today\n\n${itemList}\n`;
   if (env.GITHUB_TOKEN && env.GITHUB_REPO) {
@@ -431,11 +431,10 @@ Before saving this file, fill in the two `[Name]` placeholders in `READER_HTML` 
 
 ### Step 7 — Set secrets
 
+No AI key needed — the brief runs on free Cloudflare Workers AI via the `AI` binding in `wrangler.toml`. You only set three secrets:
+
 ```bash
 cd ~/[worker-name]-rss
-
-wrangler secret put ANTHROPIC_API_KEY
-# paste their Anthropic key
 
 wrangler secret put BRIEF_SYSTEM_PROMPT
 # paste the contents of system-prompt.txt
@@ -556,7 +555,7 @@ End with:
 - **Fill both `[Name]` placeholders** in `READER_HTML` before deploying — one in the `<title>`, one in the `<h1>`.
 - **The feeds list is in KV, not code** — no redeployment needed to add or remove sources. This is intentional.
 - **`INSERT OR IGNORE`** on the URL unique index means the same article can never appear twice, even if it stays in the feed for days.
-- **Haiku is right for the brief.** Synthesis of 10–20 kept items doesn't need Sonnet.
+- **The brief runs free on Cloudflare Workers AI** (`@cf/meta/llama-3.3-70b-instruct-fp8-fast`) — same as the Layer 1 morning brief. No API key, no cost. Synthesis of 10–20 kept items is well within what the free model handles. If they ever want sharper output, the optional Claude upgrade is the same swap surfaced in Layer 3.
 - **YouTube RSS feeds:** the URL format is `https://www.youtube.com/feeds/videos.xml?channel_id=UCxxxxxxxx`. The channel ID is in the page source under `<link rel="alternate" ...>` or in the channel URL for YouTube handles.
 - **Substack RSS:** every Substack newsletter has `/feed` — e.g. `https://stratechery.com/feed`.
 - **If a feed returns non-XML** (paywalled content, redirects, HTML): `parseItems` will return an empty array — it won't crash, but nothing gets captured. Check the Worker logs if a source seems silent.
