@@ -17,9 +17,17 @@ You are building a content intelligence layer for someone who already has a vaul
 
 **If you already use Warp, skip this — you're all set.** This is only for anyone still on the plain Mac Terminal who'd like a nicer setup. Open with:
 
-> "Quick check before we build: are you working in **Warp**, or the plain Mac **Terminal**? If you've already got Warp, just say so and we'll jump right in. If not — and you'd like a cleaner, friendlier terminal — now's a good time to grab it: go to **warp.dev**, download it, drag it into your Applications folder, and open it. One heads-up: Warp has its *own* built-in AI assistant — **ignore that** (it's not what we're using, and it can cost money). Your AI is Claude Code, same as always — just open Warp and run `claude`. Totally optional, though; the plain Terminal works perfectly fine if you'd rather skip it."
+> "Quick check before we build: are you in **Warp**, or the plain Mac **Terminal**? If you've already got Warp, just say so and we'll jump right in.
+>
+> If not — and you'd like a cleaner, friendlier terminal — here's how to grab it *and* pick right back up where we are:
+> 1. Go to **warp.dev**, download it, drag it into your Applications folder, and open it.
+> 2. Heads-up: Warp has its *own* built-in AI assistant — **ignore it** (it's not what we're using, and it can cost money). Your AI is Claude Code.
+> 3. In Warp, type `claude` and hit enter — that starts a fresh Claude Code session.
+> 4. Come back to this **Layer 2** page, hit **Copy prompt** at the top, and paste it into Claude in Warp. That drops us right back here, now running in Warp.
+>
+> Totally optional — if you'd rather not bother, the plain Terminal works perfectly fine and we'll just keep going right here. Your call."
 
-Don't let this become a project — it's a 30-second optional upgrade. Once they tell you which terminal they're in, move straight on to the interview.
+Don't let this become a project — it's a quick optional upgrade. Once they tell you which terminal they're in (and re-paste this layer if they switched to Warp), move straight on to the interview.
 
 ---
 
